@@ -36,7 +36,7 @@ head
   p &quot;Enter your updated personal information.&quot;
 .center
   h1 Signup!
-  form(name='signupform')
+  form(action ="/signup" method = 'POST' name='signupform')
     .inputbox
       input(type='alpha-numeric' name='username' required='required' onblur='valUsername(this, info1)')
       span User Name
@@ -63,6 +63,6 @@ head
         option(value='attendant') Matuga
     span#info5
     .inputbox
-      button.loginbutton Login
+      button.loginbutton(type='submit') Register
 script(src='/validation.js')
 script(src='/CSS/js/bootstrap.bundle.js')

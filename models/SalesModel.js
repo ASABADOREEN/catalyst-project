@@ -6,7 +6,7 @@ const salesSchema = new mongoose.Schema({
   nameofProduce: {
     type: String,
   },
-  weight : {
+  tonnage : {
     type: Number,
   },
 
@@ -24,6 +24,5 @@ const salesSchema = new mongoose.Schema({
   },
 });
 
-// Export Model
-//ManagerSchema.plugin(passportLocalMongoose, { usernameField: "email" });
+
 module.exports = mongoose.model("Sales", salesSchema);

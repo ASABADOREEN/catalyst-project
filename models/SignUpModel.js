@@ -24,5 +24,5 @@ const signupSchema = new mongoose.Schema({
 });
 
 // Export Model
-//ManagerSchema.plugin(passportLocalMongoose, { usernameField: "email" });
-module.exports = mongoose.model("Signup", signupSchema);
+signupSchema.plugin(passportLocalMongoose, { usernameField: "email" });
+module.exports = mongoose.model("UserSignUp", signupSchema);
