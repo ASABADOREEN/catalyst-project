@@ -36,7 +36,7 @@ head
   p &quot;Enter your updated personal information.&quot;
 .center
   h1 Signup!
-  form(name='signupform')
+  form(action='/signup' method='POST' name='signupform')
     .inputbox
       input(type='alpha-numeric' name='username' required='required' onblur='valUsername(this, info1)')
       span User Name
@@ -59,8 +59,8 @@ head
     .inputbox
       select#branch(name='branch' onblur='valbranch(this,info5)')
         option(value='Select') Select Branch
-        option(value='attendant') Maganjo
-        option(value='attendant') Matuga
+        option(value='Maganjo') Maganjo
+        option(value='Matugga') Matugga
     span#info5
     .inputbox
       button.loginbutton Login

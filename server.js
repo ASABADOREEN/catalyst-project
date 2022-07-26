@@ -27,11 +27,10 @@ let config = require('./config/database');
 
 //initiatlising server
 const server = express();
-const Login = require('./models/login');
-const Procurement = require('./models/procurement');
-const Sales = require('./models/sales');
-const Credit = require('./models/credit')
-const Signup = require('./models/signup')
+const Procurement = require('./models/Procurement');
+const Sales = require('./models/Sales');
+const Credit = require('./models/Credit')
+const Employee = require('./models/Employee')
 
 //database setup
 //setting connection
@@ -59,13 +58,13 @@ server.use(express.static(path.join(__dirname, "public")));
 server.use(expressSession);
 
 //configuring passport
-/*server.use(passport.initialize());
-server.use(passport.session());*/
+server.use(passport.initialize());
+server.use(passport.session());
 
-// Passport Local Strategy
-/*passport.use(login.createStrategy());
-passport.serializeUser(login.serializeUser());
-passport.deserializeUser(login.deserializeUser());*/
+ //Passport Local Strategy
+passport.use(Employee.createStrategy());
+passport.serializeUser(Employee.serializeUser());
+passport.deserializeUser(Employee.deserializeUser());
 //LoginChecker
 // const loginchecker = (req, res, next) => {
 //   if (req.path != "/login" && req.path != "/register" && !req.session.user) {

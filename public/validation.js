@@ -463,10 +463,10 @@ const valbuyername = (inputField, info4)=>{
         let User = document.signupform.username;
         //const info1 = document.getElementById("info1").value;
         let reg =  /^[a-zA-Z0-9]+$/;
-        if (inputField.value.length <= 14 || !inputField.value.match(reg)){
-            //info1.style.border = "2px solid red";
+        if (inputField.value.length < 14 || !inputField.value.match(reg)){
+            info1.style.border = "2px solid red";
             info1.innerHTML = "must be between 3-14 characters";
-            info1.style.color = "red";
+            info1.style.border = "red";
             info1.style.fontSize = "12px";
             return false;  
         }
@@ -506,7 +506,7 @@ const valbuyername = (inputField, info4)=>{
         let password = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
         if (inputField.value.length < 8 || !inputField.value.match(password)){
             //info1.style.border = "2px solid red";
-            info3.innerHTML = "should have atleast 8 characters";
+            info3.innerHTML = "should have atmost 8 characters";
             info3.style.color = "red";
             info3.style.fontSize = "12px";
     
